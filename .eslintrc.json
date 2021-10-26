@@ -1,0 +1,45 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint",
+        "simple-import-sort",
+        "unused-imports"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+        "@typescript-eslint/semi": "warn",
+        "@typescript-eslint/array-type": "error",
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+              "selector": "typeLike",
+              "format": ["PascalCase"]
+            }
+        ],
+        "simple-import-sort/imports": "error",
+        "unused-imports/no-unused-imports": "error",
+        "eqeqeq": "warn",
+        "no-throw-literal": "warn",
+        "semi": "off",
+        "comma-spacing": ["error", { "before": false, "after": true }],
+        "array-bracket-spacing": ["error", "always"],
+        "space-before-function-paren": ["error", {
+            "anonymous": "always",
+            "named": "never",
+            "asyncArrow": "always"
+        }],
+        "curly": "error",
+        "indent": ["error", 4, {
+            "SwitchCase": 1
+        }],
+        "object-curly-spacing": ["error", "always"],
+        "brace-style": "error",
+        "quotes": ["error", "single"],
+        "jsx-quotes": ["error", "prefer-double"]
+    }
+}

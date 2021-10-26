@@ -1,0 +1,35 @@
+{
+  "name": "allostra-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.ts",
+  "scripts": {
+    "start": "ts-node src/app.ts",
+    "build": "tsc",
+    "lint": "eslint . --ext .ts --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IliaSmagloy/allostra-exercise.git"
+  },
+  "author": "Ilya Smagloy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IliaSmagloy/allostra-exercise/issues"
+  },
+  "homepage": "https://github.com/IliaSmagloy/allostra-exercise#readme",
+  "devDependencies": {
+    "@types/express": "github:types/express",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "eslint": "^8.0.1",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-unused-imports": "^1.1.5",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
