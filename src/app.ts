@@ -1,8 +1,18 @@
 import express from 'express';
-const app = express();
- 
+import { jsonwebtoken } from 'jsonwebtoken';
+
+import { authenticateRequest } from './utils';
+
+const jwt = jsonwebtoken();
+
+const app = express(); 
 app.post('/generateToken', function (req, res) {
-    res.send('Hello World');
+    const userId = authenticateRequest(req);
+    if(!userId) { 
+        res.send('Unauthenticated request, aborting action.');
+    } else {
+        res.send('Authenticated request.');
+    }
 });
 
 app.post('/authenticate', function (req, res) {
