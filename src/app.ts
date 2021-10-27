@@ -7,7 +7,7 @@ const accessService = new AccessService();
         console.log('AccessService started listening on port 3000');
         await accessService.start();
     } catch (error) {
-        console.log('An unexpected error occured');
+        console.log('An unexpected error occurred');
         console.log(JSON.stringify(error));
     }
 })();
