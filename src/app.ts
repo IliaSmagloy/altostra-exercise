@@ -1,30 +1,13 @@
-import express from 'express';
-import { jsonwebtoken } from 'jsonwebtoken';
+import AccessService from './server';
 
-import { authenticateRequest } from './utils';
+const accessService = new AccessService();
 
-const jwt = jsonwebtoken();
-
-const app = express(); 
-app.post('/generateToken', function (req, res) {
-    const userId = authenticateRequest(req);
-    if(!userId) { 
-        res.send('Unauthenticated request, aborting action.');
-    } else {
-        res.send('Authenticated request.');
+(async () => {
+    try {
+        console.log('AccessService started listening on port 3000');
+        await accessService.start();
+    } catch (error) {
+        console.log('An unexpected error occured');
+        console.log(JSON.stringify(error));
     }
-});
-
-app.post('/authenticate', function (req, res) {
-    res.send('Hello World');
-});
-
-app.post('/revoke', function (req, res) {
-    res.send('Hello World');
-});
-
-app.get('/tokens', function (req, res) {
-    res.send('Hello World');
-});
-
-app.listen(3000);
+})();
