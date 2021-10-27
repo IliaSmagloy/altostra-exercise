@@ -1,20 +1,13 @@
-import express from 'express';
-const app = express();
- 
-app.post('/generateToken', function (req, res) {
-    res.send('Hello World');
-});
+import AccessService from './server';
 
-app.post('/authenticate', function (req, res) {
-    res.send('Hello World');
-});
+const accessService = new AccessService();
 
-app.post('/revoke', function (req, res) {
-    res.send('Hello World');
-});
-
-app.get('/tokens', function (req, res) {
-    res.send('Hello World');
-});
-
-app.listen(3000);
+(async () => {
+    try {
+        console.log('AccessService started listening on port 3000');
+        await accessService.start();
+    } catch (error) {
+        console.log('An unexpected error occured');
+        console.log(JSON.stringify(error));
+    }
+})();
